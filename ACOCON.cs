@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ACOCON
+public class ACOCON : MonoBehaviour
 {
     private float defaultPheromone = 1.0f;
     public float DefaultPheromone
     {
         get { return defaultPheromone; }
     }
+    [SerializeField]
     private float Alpha = 1.0f;
+    [SerializeField]
     private float Beta = 0.0001f;
     // where 0 ≤ EvaporationFactor ≤ 1 is the evaporation factor of the pheromone.
+    [SerializeField]
     private float EvaporationFactor = 0.5f;
     // Q is a constant, it should be ≤ 1.
+    [SerializeField]
     private float Q = 0.0006f;
     // Ants of agents moving through the graph. This class stores properties: Total distance and connections used.
     private List<ACOAnt> Ants = new List<ACOAnt>();
@@ -230,8 +234,8 @@ WaypointNodes = All the waypoint nodes in the waypoint graph used by the ACO alg
     {
         foreach (ACOConnection aConnection in Connections)
         {
-            Debug.Log(">" + aConnection.FromNode.name + " | ---> " +
-            aConnection.ToNode.name + " = " + aConnection.PheromoneLevel);
+            //Debug.Log(">" + aConnection.FromNode.name + " | ---> " +
+            //aConnection.ToNode.name + " = " + aConnection.PheromoneLevel);
         }
     }
     // Log Route
